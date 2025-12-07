@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="basic_robot">
+    <material name="grey">
+        <color rgba="0.7 0.7 0.7 1"/>
+    </material>
+
+    <material name="green">
+        <color rgba="0 1 0 1"/>
+    </material>
+
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.5 0.5 0.1"/>
+            </geometry>
+            <origin xyz="0 0 0.05" rpy="0 0 0"/>
+            <material name="green"/>
+        </visual>
+    </link>
+
+    <link name="NorthWest_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <link name="NorthEast_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <link name="SouthWest_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <link name="SouthEast_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="base_NorthWest_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="NorthWest_wheel_link"/>
+        <origin xyz="0.25 0.25 0.05" rpy="1.57079633 0 2.35619449"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <joint name="base_NorthEast_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="NorthEast_wheel_link"/>
+        <origin xyz="0.25 -0.25 0.05" rpy="1.57079633 0 -2.35619449"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <joint name="base_SouthWest_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="SouthWest_wheel_link"/>
+        <origin xyz="-0.25 -0.25 0.05" rpy="1.57079633 0 2.35619449"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <joint name="base_SouthEast_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="SouthEast_wheel_link"/>
+        <origin xyz="-0.25 0.25 0.05" rpy="1.57079633 0 -2.35619449"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+</robot>
